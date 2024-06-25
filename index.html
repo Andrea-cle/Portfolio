@@ -14,10 +14,17 @@
       href="./favicon_io/favicon-16x16.png"
       type="image/x-icon"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <script
       src="https://kit.fontawesome.com/68ae71775f.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
     <!--
@@ -49,7 +56,7 @@
         <div class="logo">Andréa CLEMENT</div>
         <nav class="navbar">
           <ul class="menu list-unstyled">
-            <li><a href="index.html">Accueil</a></li>
+            <li><a href="#hero">Accueil</a></li>
             <li><a href="#about">A propos</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#skills">Compétences</a></li>
@@ -72,7 +79,7 @@
             </li>
             <li>
               <a href="https://www.whire.me/@AndreaCLEMENT" target="_blank"
-                ><img width="22" src="img/Whire-Logo.png"
+                ><img src="img/Whire-Logo.png"
               /></a>
               <!-- _blank -> ouverture d'une nouvelle fenêtre -->
             </li>
@@ -87,7 +94,7 @@
               ></a>
             </li>
           </ul>
-          <button class="burger"><span class="bar">-</span></button>
+          <button class="burger"><span class="bar"></span></button>
         </div>
       </div>
     </header>
@@ -147,19 +154,382 @@
       </div>
     </section>
 
-    <section id="Services" class="services">
-      <h2 class="section-title">Mes services</h2>
-    </section>
-    <section id="skills" class="skills">
-      <h2 class="section-title">Mes compétences</h2>
-    </section>
-    <section id="portefolio" class="portefolio">
-      <h2 class="section-title"></h2>
-    </section>
-    <section id="contact" class="contact">
-      <h2 class="section-title">Contact</h2>
+    <section id="services" class="services">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Mes services</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore
+            voluptatum numquam earum quas, minus asperiores magni quod officiis
+            veritatis dolorum.
+          </p>
+        </div>
+        <div class="grid">
+          <div class="grid_item">
+            <div class="services">
+              <div class="services_icon">
+                <i class="fa-regular fa-lightbulb"></i>
+              </div>
+              <div class="services_content">
+                <h3>Gestion de projets web</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
+                  quisquam dolor animi, eveniet harum ducimus magnam officia ut
+                </p>
+              </div>
+            </div>
+            <div class="services">
+              <div class="services_icon">
+                <i class="fa-regular fa-pen-to-square"></i>
+              </div>
+              <div class="services_content">
+                <h3>Intégration web</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
+                  quisquam dolor animi, eveniet harum ducimus magnam officia ut
+                </p>
+              </div>
+            </div>
+            <div class="services">
+              <div class="services_icon">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+              </div>
+              <div class="services_content">
+                <h3>Dévelopement spécifiques</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
+                  quisquam dolor animi, eveniet harum ducimus magnam officia ut
+                </p>
+              </div>
+            </div>
+            <div class="services">
+              <div class="services_icon">
+                <i class="fa-regular fa-square-check"></i>
+              </div>
+              <div class="services_content">
+                <h3>Référencement naturel</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
+                  quisquam dolor animi, eveniet harum ducimus magnam officia ut
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid_item">
+            <div class="services">
+              <div class="services_icon">
+                <i class="fa-solid fa-pencil"></i>
+              </div>
+              <div class="services_content">
+                <h3>Conception graphique et design</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
+                  quisquam dolor animi, eveniet harum ducimus magnam officia ut
+                </p>
+              </div>
+            </div>
+            <div class="services">
+              <div class="services_icon">
+                <i class="fa-solid fa-rotate"></i>
+              </div>
+              <div class="services_content">
+                <h3>Dynamisme des pages</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
+                  quisquam dolor animi, eveniet harum ducimus magnam officia ut
+                </p>
+              </div>
+            </div>
+            <div class="services">
+              <div class="services_icon">
+                <i class="fa-solid fa-user-gear"></i>
+              </div>
+              <div class="services_content">
+                <h3>Interface d'administration</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
+                  quisquam dolor animi, eveniet harum ducimus magnam officia ut
+                </p>
+              </div>
+            </div>
+            <div class="services">
+              <div class="services_icon">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+              </div>
+              <div class="services_content">
+                <h3>Responsive design</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
+                  quisquam dolor animi, eveniet harum ducimus magnam officia ut
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <footer>Footer</footer>
+    <section id="skills" class="skills">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Mes compétences</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore
+            voluptatum numquam earum quas, minus asperiores magni quod officiis
+            veritatis dolorum.
+          </p>
+        </div>
+        <div class="grid">
+          <div class="grid_item">
+            <h3>Domaines de compétences</h3>
+            <ul class="list-unstyles">
+              <li>
+                <h4>Compétences</h4>
+                <p>Description de la compétence</p>
+              </li>
+              <li>
+                <h4>Compétences</h4>
+                <p>Description de la compétence</p>
+              </li>
+              <li>
+                <h4>Compétences</h4>
+                <p>Description de la compétence</p>
+              </li>
+              <li>
+                <h4>Compétences</h4>
+                <p>Description de la compétence</p>
+              </li>
+              <li>
+                <h4>Compétences</h4>
+                <p>Description de la compétence</p>
+              </li>
+              <li>
+                <h4>Compétences</h4>
+                <p>Description de la compétence</p>
+              </li>
+            </ul>
+          </div>
+          <div class="grid_item">
+            <h3>Compétences en développement</h3>
+            <div class="progressbar">
+              <div class="bar">HTML</div>
+              <div class="bar">CSS</div>
+              <div class="bar">JavaScript</div>
+              <div class="bar">Node</div>
+              <div class="bar">React</div>
+              <div class="bar">PHTP</div>
+            </div>
+            <h3>Compétences en conception graphique</h3>
+            <div class="bar">Photoshop</div>
+            <div class="bar">Illustrator</div>
+            <div class="bar">Aftereffect</div>
+            <div class="bar">Figma</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="portefolio" class="portefolio">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Portefolio</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore
+            voluptatum numquam earum quas, minus asperiores magni quod officiis
+            veritatis dolorum.
+          </p>
+        </div>
+        <ul class="grid portefolio-filters list-unstyled">
+          <li class="grid_item">
+            <a href="#">Tous les projets</a>
+          </li>
+          <li class="grid_item">
+            <a href="#">Développement web</a>
+          </li>
+          <li class="grid_item">
+            <a href="#">refonte graphique</a>
+          </li>
+          <li class="grid_item">
+            <a href="#">application</a>
+          </li>
+        </ul>
+        <div class="grid">
+          <div class="grid_item">
+            <div class="card">
+              <img
+                src="https://picsum.photos/600/400?random=1"
+                alt="projet de la ville"
+                class="card_image"
+              />
+              <div class="card_inner">
+                <h3 class="card_title">Titre du projet</h3>
+                <p class="category">Développement web</p>
+              </div>
+              <div class="card_overlay">
+                <a href="#">+</a>
+              </div>
+            </div>
+          </div>
+          <div class="grid_item">
+            <div class="card">
+              <img
+                src="https://picsum.photos/600/400?random=2"
+                alt="projet de la ville"
+                class="card_image"
+              />
+              <div class="card_inner">
+                <h3 class="card_title">Titre du projet</h3>
+                <p class="category">Refonte graphique</p>
+              </div>
+              <div class="card_overlay">
+                <a href="#"></a>
+              </div>
+            </div>
+          </div>
+          <div class="grid_item">
+            <div class="card">
+              <img
+                src="https://picsum.photos/600/400?random=3"
+                alt="projet de la ville"
+                class="card_image"
+              />
+              <div class="card_inner">
+                <h3 class="card_title">Titre du projet</h3>
+                <p class="category">Application</p>
+              </div>
+              <div class="card_overlay">
+                <a href="#"></a>
+              </div>
+            </div>
+          </div>
+          <div class="grid_item">
+            <div class="card">
+              <img
+                src="https://picsum.photos/600/400?random=4"
+                alt="projet de la ville"
+                class="card_image"
+              />
+              <div class="card_inner">
+                <h3 class="card_title">Titre du projet</h3>
+                <p class="category">Refonte graphique</p>
+              </div>
+              <div class="card_overlay">
+                <a href="#"></a>
+              </div>
+            </div>
+          </div>
+          <div class="grid_item">
+            <div class="card">
+              <img
+                src="https://picsum.photos/600/400?random=5"
+                alt="projet de la ville"
+                class="card_image"
+              />
+              <div class="card_inner">
+                <h3 class="card_title">Titre du projet</h3>
+                <p class="category">Développement web</p>
+              </div>
+              <div class="card_overlay">
+                <a href="#"></a>
+              </div>
+            </div>
+          </div>
+          <div class="grid_item">
+            <div class="card">
+              <img
+                src="https://picsum.photos/600/400?random=6"
+                alt="projet de la ville"
+                class="card_image"
+              />
+              <div class="card_inner">
+                <h3 class="card_title">Titre du projet</h3>
+                <p class="category">Application</p>
+              </div>
+              <div class="card_overlay">
+                <a href="#"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Contact</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore
+            voluptatum numquam earum quas, minus asperiores magni quod officiis
+            veritatis dolorum.
+          </p>
+        </div>
+        <form class="form" action="" method="">
+          <label for="firstname"
+            >Nom
+            <input type="text" name="firstname" id="" placeholder="Nom" />
+          </label>
+          <label for="lastname"
+            >Prénom
+            <input type="text" name="lastname" id="" placeholder="Prénom" />
+          </label>
+          <label for="email"
+            >Email
+            <input type="email" name="email" id="" placeholder="Email" />
+          </label>
+          <textarea
+            name="message"
+            id="message"
+            placeholder="Message"
+          ></textarea>
+          <input type="submit" value="Envoyer" />
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="grid">
+          <div class="grid_item">
+            <p>logo et Andréa CLEMENT</p>
+          </div>
+          <div class="grid_item">
+            <ul class="social list-unstyled">
+              <li>
+                <a
+                  href="https://github.com/Andrea-cle/Andrea-cle.git"
+                  target="_blank"
+                  ><i
+                    class="fa-brands fa-github fa-xl"
+                    style="color: #b197fc"
+                  ></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.whire.me/@AndreaCLEMENT" target="_blank"
+                  ><img width="22" src="img/Whire-Logo.png"
+                /></a>
+                <!-- _blank -> ouverture d'une nouvelle fenêtre -->
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/andrea-clement-924a0a29a"
+                  target="_blank"
+                  ><i
+                    class="fa-brands fa-linkedin fa-xl"
+                    style="color: #b197fc"
+                  ></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+          <div class="grid_item">
+            <p>
+              Copyright &copy; 2024. Andréa CLEMENT Portefolio. All right
+              reserved
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
