@@ -1,38 +1,69 @@
 /* Base */
 *{
-    box-sizing: border-box;
-   
+  box-sizing: border-box;
 }
 
 html{
-font-size:62.5%;
+ font-size:62.5%;
 }
-
-a{
-    text-decoration: none;
-}
-
 
 body{
- font-family: Verdana, Geneva, Tahoma, sans-serif;
- font-size: 1.6rem;
- color: #333;
- margin: 0;
- text-align: center;
- 
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.6rem;
+  color: #333;
+  margin: 0;
+  
+ }
+
+ h1, h2, h3, h4, h5, h6{
+  color: #333;
+  font-family: "Poppins", sans-serif;
+ }
+
+h1 .h1{
+  font-size: 3.1rem;
+  font-weight: 700;
+}
+
+ h2 .h2{
+  font-size: 2.2rem;
+  text-transform: uppercase;
+ }
+
+a{
+ text-decoration: none;
+}
+
+img{
+ max-width: 100%;
+ height: auto;
+ align-items: center;
 }
 
 .list-unstyled{
-    list-style: none;
-    margin: 0;
-    padding: 0;
+ list-style: none;
+ margin: 0;
+ padding: 0;
 }
 
 .container{
-padding: 1rem 2rem;
-display: flex;
-align-items: center;
-justify-content: space-between;
+ padding: 1rem 2rem;
+}
+
+.d-flex{
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+}
+
+.grid{
+ display: flex;
+ flex-wrap: wrap;
+ align-items: center ;
+}
+
+.grid_item{
+ width: 100%;
 }
 
 @media screen and (min-width: 750px) {
@@ -40,68 +71,114 @@ justify-content: space-between;
         max-width: 1200px;
         margin: 0 auto;
         padding: 2rem;
-        
     }
+
+    .grid_item{
+         width: 50%;
+     }
     
 }
 
  /* Section */
 
-.header{
-    background: #FFFF;
-    border-bottom: 1px solid #EEE;
+ section{
+  padding:5.5rem 0;
+ }
+
+ .section-title{
+  color:#000;
+  font-size: 3.8rem;
+  text-transform: uppercase;
    }
+
+.header{
+ background: #FFFF;
+ border-bottom: 1px solid #EEE;
+}
 
 
 .header .logo{
-    font-family: "Poppins", sans-serif;
-    font-size: 2rem; 
-    letter-spacing: 2px;
+ font-family: "Poppins", sans-serif;
+ font-size: 2rem; 
+ letter-spacing: 2px;
 }
 
 .navbar{
-display: none;
+  display: none;
 }
 
 .header li{
-    display:inline-flex;
-    align-items: center;
-    padding:0 .5rem;
+ display:inline-flex;
+ align-items: center;
+ padding:0 .5rem;
 }
 
 .header a{
-color: #333;
-
+ color: #333;
 }
 
 .header a:hover{
-    color:blueviolet;
+ color:blueviolet;
 }
 
 .header .right{
-    display:flex;
-    padding: 0 .5rem; 
-    align-items: center;
+ display:flex;
+ padding: 0 .5rem; 
+ align-items: center;
 }
   
+.social{
+ display: flex;
+}
+
+.social li{
+ padding: 0 2px;
+}
+
 .social img{
-height: 22px;
+ height: 22px;
 }
 
 .burger{
-    background:none;
-    border: none;
-    width: 35px;
-    height: 35px;
-    cursor: pointer;
+ background:none;
+ border: none;
+ width: 35px;
+ height: 35px;
+ cursor: pointer;
+ position: relative;
+ margin-left: 1rem;
 }
 
 .burger .bar{
-    display: block;
-    width: 22px;
-    height: 3px;
-    background-color: black;
+  display: block;
+  width: 22px;
+  height: 3px;
+  background-color: black;
 }
+
+.burger .bar::before, .burger .bar::after{
+  display: block;
+  content:"";
+  width: 22px;
+  height: 3px;
+  background: #000;
+  position: absolute;
+    
+}
+
+.burger .bar::before{
+  transform: translateY(-8px);
+    
+}
+
+.burger .bar::after{
+  transform: translateY(8px);
+}
+
+@media screen and (max-width: 749px){
+
+}
+
 
 @media screen and (min-width: 750px) {
     .navbar{
@@ -110,5 +187,60 @@ height: 22px;
 
     .burger{
     display:none;
+    }
 }
+
+.hero{
+ background: #4c697c;
+ color: #FFFF;
+ padding: 1rem 0 0 0;
+}
+
+.hero .title{
+  color: inherit;
+  /* inherit : herite de la couleur de son parent soit .hero non pas de la couleur de la mise en page generale*/
+  font-size: 4rem;
+  margin: 1.6rem 1rem;
+}
+
+.hero_item{
+ display: flex;
+ flex-direction: column;
+ justify-content: center; 
+ align-items: center;
+ text-align: center;
+}
+
+.hero_item span{
+  text-transform: uppercase;
+  padding-top: 1rem;
+}
+
+.hero_avatar img{
+   
+}
+
+@media screen and (max-width: 749px) {
+  .hero_item.left{
+    order: 2;
+   }
+   
+   .hero_item.right{
+    order: 1;
+   }
+}
+
+@media screen and (min-width: 750px) {
+    .hero_item{
+      flex: 1 0 50%;
+      align-items: flex-start;
+      text-align: left;
+    }
+    .hero .title{
+      font-size: 5rem;
+    }
+
+    .hero_avatar img{
+      border-radius: 50%
+    }
 }
