@@ -1,4 +1,10 @@
 /* ---------------------Base --------------------------------*/
+
+:root{
+--color-body:#333;
+--background-body: #ffffff;
+}
+
 *{
   box-sizing: border-box;
 }
@@ -11,9 +17,9 @@ body{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1.6rem;
   line-height: 1.6;
-  color: #333;
+  color: var(--color-body);
   margin: 0;
-  
+  background: var(--color-background-body);
  }
 
  h1, h2, h3, h4, h5, h6{
@@ -43,8 +49,12 @@ img{
  align-items: center;
 }
 
+ul{
+ padding-left: 2rem;
+}
+
 li{
-  margin-bottom: 1rem;
+ margin-bottom: 1rem;
 }
 
 .list-unstyled{
@@ -54,10 +64,10 @@ li{
 }
 
 .category{
-  margin: 0;
-  font-size: 1rem;
-  text-transform: uppercase;
-  color:#5b6c78;
+ margin: 0;
+ font-size: 1rem;
+ text-transform: uppercase;
+ color:#5b6c78;
 }
   
 .container{
@@ -152,11 +162,15 @@ section{
 }
 
 .header a{
- color: #333;
-}
+ color: var(--color-body);
+ }
 
 .header a:hover{
  color:blueviolet;
+ filter:drop-shadow(2px 2px 20px #360faa);
+  /* filter permets un effet néon autour du bouton */
+ transform: translate(-5px, -10px);
+  /* transforme la propriété du hover */
 }
 
 .header .right{
@@ -180,26 +194,26 @@ section{
 }
 
 .social img{
- width: 19px;
+ max-width: 19px;
  height: 22px;
 }
 
 /* ---------button---------- */
 
 .hamburger {
-  display: inline-block;
-  cursor: pointer;
-  padding: 15px;
-  transition-property: opacity, filter;
-  transition-duration: 0.15s;
-  transition-timing-function: linear;
-  font: inherit;
-  color: inherit;
-  text-transform: none;
-  background-color: transparent;
-  border: 0;
-  margin: 0;
-  overflow: visible;
+ display: inline-block;
+ cursor: pointer;
+ padding: 15px;
+ transition-property: opacity, filter;
+ transition-duration: 0.15s;
+ transition-timing-function: linear;
+ font: inherit;
+ color: inherit;
+ text-transform: none;
+ background-color: transparent;
+ border: 0;
+ margin: 0;
+ overflow: visible;
 }
 
 .hamburger-box {
@@ -318,9 +332,19 @@ section{
   padding-top: 1rem;
 }
 
-.hero_item .right{
+/* .hero_item .right{
   flex-direction: inherit;
-}
+} */
+
+.hero_item.left{
+  animation-duration: 1s;
+  animation-name: slideInLeft;
+ }
+
+ .hero_item.right{
+  animation-duration: 1s;
+  animation-name: slideInRight;
+ }
 
 @media screen and (max-width: 749px) {
   .hero_item.left{
@@ -458,7 +482,7 @@ background: #f5f5f5;
 }
 
 .portefolio-filters a{
-  color:#333;
+  color:var(--color-body);
   background: #EEE;
   display: flex;
   flex:1;
@@ -479,7 +503,7 @@ background: #f5f5f5;
 }  
 
 @media screen and (min-width: 750px) {
-  .portefolio .grid_item{
+  .portefolio-filters .grid_item{
     max-width: 25%;
   }
 
@@ -494,6 +518,8 @@ background: #f5f5f5;
   background: #fff;
   text-transform: uppercase;
   position: relative;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--color-body);
  }
  
  .card_inner{
@@ -529,7 +555,7 @@ background: #f5f5f5;
  /* ---------Form---------- */
 
  .form{
-  max-width: 800px;
+  max-width: 600px;
   margin: 4rem auto 0 auto;
  }
 
@@ -555,8 +581,82 @@ background: #f5f5f5;
 
  .form .btn:hover{
   cursor: pointer;
-  background: blueviolet;
+  background: #b49bfc;
+  filter:drop-shadow(2px 2px 20px #360faa);
+ /* filter permet de faire un effet néon */
  }
 
+ /* ---------Footer---------- */
+
+ footer{
+  background: #000;
+  color: #fff;
+  text-align: center;
+  font-size: 1.4rem;
+ }
+
+ footer p{
+  margin: 0;
+ }
+
+ footer .social{
+  justify-content: center;
+ }
+
+ footer .social li { 
+  padding: 0 1.5rem;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 42px;
+  transition:all 1s;
+ }
+
+ footer .social li:hover { 
+  background: #fff;
+  color:var(--color-body);
+ }
+
+ /* footer .social a { 
+  border: 1px solid #fff;
+  border-radius: 50%;
+  padding: 1rem;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+ } */
+
+@media screen and (min-width: 750px) {
+  footer{
+   text-align: left;
+ }
+
+  footer .grid_item {
+    max-width: 33.3333%;
+  }
+}  
+
+@keyframes slideInLeft{
+  /*c'est une animation css  */
+  from{
+    transform: translateX(-110%);
+  }
+  to{
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight{
+  /*c'est une animation css  */
+  from{
+    transform: translateX(110%);
+  }
+  to{
+    transform: translateX(0);
+  }
+}
 
 /* Component */
