@@ -26,7 +26,8 @@
     ></script>
     <link rel="stylesheet" href="./css/style.css" />
     <link href="dist/hamburgers.css" rel="stylesheet" />
-    <script src="./js/gobal.js" defer></script>
+    <!-- <script src="./js/gobal.js" defer></script> 
+     defer permets de charger la page pour éviter les bugs-->
   </head>
   <body>
     <!--
@@ -53,17 +54,23 @@
 
     -->
 
-    <header class="header">
+    <header class="header show-nav">
       <div class="container d-flex">
         <div class="logo">Andréa CLEMENT</div>
         <nav class="navbar">
           <ul class="menu list-unstyled">
             <li><a href="#hero">Accueil</a></li>
             <li><a href="#about">A propos</a></li>
-            <li><a href="#services">Services</a></li>
+            <li><a href="#services">Informations</a></li>
             <li><a href="#skills">Compétences</a></li>
-            <li><a href="#portefolio">Portefolio</a></li>
-            <li><a href="blog.html">Le blog</a></li>
+            <li><a href="#portefolio">Portfolio</a></li>
+            <li>
+              <a
+                href="https://vitalityareaac.wixsite.com/website1"
+                target="_blank"
+                >Le blog</a
+              >
+            </li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
@@ -96,12 +103,17 @@
               ></a>
             </li>
           </ul>
-          <button class="hamburger hamburger--vortex is-active" type="button">
+          <!-- <button
+            class="hamburger hamburger--vortex is-active"
+            type="button"
+            aria-label="Menu"
+            aria-controls="navigation"
+          >
             <span class="hamburger-box">
               <span class="hamburger-inner"></span>
             </span>
-          </button>
-          <!-- <button class="burger"><span class="bar"></span></button> -->
+          </button> -->
+          <button class="burger"><span class="bar"></span></button>
         </div>
       </div>
     </header>
@@ -269,11 +281,41 @@
                 <i class="fa-regular fa-square-check"></i>
               </div>
               <div class="services_content">
-                <h3>Référencement naturel</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
-                  quisquam dolor animi, eveniet harum ducimus magnam officia ut
-                </p>
+                <h3>
+                  Quelles aides financières pour un contrat de
+                  professionalisation ?
+                </h3>
+                <ul>
+                  <li>
+                    <a
+                      href="https://www.francetravail.fr/employeur/aides-aux-recrutements/les-aides-a-lembauche/aide-a-lembauche-dun-demandeur-d.html"
+                      target="_blank"
+                      >Aide de Pôle Emploi</a
+                    >
+                    de 2000 euros pour le recrutement d’un contrat pro,
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.francetravail.fr/employeur/aides-aux-recrutements/les-aides-a-lembauche/embauche-de-de-de-45-ans-et-plus.html"
+                      target="_blank"
+                      >Aide de Pôle Emploi</a
+                    >
+                    de 2000 euros pour le recrutement d’un contrat pro de plus
+                    de 45 ans (cumulable avec l'aide de Pôle Emploi de 2000
+                    euros)
+                  </li>
+                  <li>
+                    <h4>
+                      Faites vous
+                      <a href="https://emploi45plus.org/" target="_blank"
+                        >labeliser</a
+                      >
+                    </h4>
+                    Les +45 ans, forts de leur expérience et stabilité,
+                    apportent des compétences recherchées. Être une entreprise
+                    labellisée facilite le recrutement et votre visibilité.
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -284,11 +326,29 @@
                 <i class="fa-solid fa-pencil"></i>
               </div>
               <div class="services_content">
-                <h3>Conception graphique et design</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
-                  quisquam dolor animi, eveniet harum ducimus magnam officia ut
-                </p>
+                <h3>Modalités d'évaluation des compétences</h3>
+                <ul>
+                  L’examen se déroule sur l’un de nos campus et comporte trois
+                  parties :
+                  <li>
+                    <u>
+                      Présentation d’un projet réalisé en amont de la session
+                    </u>
+                    : en amont de la session, le candidat a réalisé un projet en
+                    entreprise concernant le développement d’une application web
+                    ou mobile et a préparé un dossier de projet ainsi qu’un
+                    support de présentation (40 minutes).
+                  </li>
+                  <li>
+                    <u>Entretien technique</u> : le jury questionne le candidat
+                    sur la base de son dossier de projet et de sa présentation
+                    orale (45 minutes).
+                  </li>
+                  <li>
+                    <u>Entretien final</u> : le jury évalue la compréhension, la
+                    vision et la culture professionnelle du métier (20 minutes).
+                  </li>
+                </ul>
               </div>
             </div>
             <div class="services">
@@ -296,11 +356,38 @@
                 <i class="fa-solid fa-rotate"></i>
               </div>
               <div class="services_content">
-                <h3>Dynamisme des pages</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
-                  quisquam dolor animi, eveniet harum ducimus magnam officia ut
-                </p>
+                <h3>Méthode pédagogique</h3>
+                <ul>
+                  <u>Mettre en pratique</u>
+                  <li>
+                    Au début de la formation, un projet individuel permet
+                    d'acquérir et de consolider les bases. Ensuite, un projet
+                    fil-rouge en groupe met en pratique les notions apprises
+                    tout au long de la formation et répond aux exigences de la
+                    certification.
+                  </li>
+
+                  <u>Renforcer les compètences</u>
+                  <li>
+                    Le live coding permet d'acquérir, de renforcer et de mettre
+                    en pratique vos compétences, tandis que des quêtes à
+                    réaliser tout au long de la formation sont disponibles sur
+                    la plateforme pédagogique Odyssey.
+                  </li>
+                  <u>Prendre du recul</u>
+                  <li>
+                    Les daily standups permettent de se connecter et de fixer
+                    les objectifs quotidiens, tandis que les rétrospectives
+                    hebdomadaires font le bilan des compétences acquises.
+                  </li>
+                  <u>Etre accompagné en entreprise</u>
+                  <li>
+                    La messagerie Slack disponible sur le temps en entreprise
+                    pour entraide entre alternants. Point à mi-parcours avec
+                    votre tuteur et l'école pour répondre à vos attentes et à
+                    celles de l'entreprise.
+                  </li>
+                </ul>
               </div>
             </div>
             <div class="services">
@@ -308,10 +395,16 @@
                 <i class="fa-solid fa-user-gear"></i>
               </div>
               <div class="services_content">
-                <h3>Interface d'administration</h3>
+                <h3>Suivi pédagogique</h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
-                  quisquam dolor animi, eveniet harum ducimus magnam officia ut
+                  La validation des compétences se réalise en continu à travers
+                  diverses activités pédagogiques : exercices individuels («
+                  quêtes ») sur la plateforme Odyssey, projets de groupe validés
+                  par les formateurs, revues de code entre participants ou par
+                  les formateurs, et présentations orales sur des sujets
+                  techniques et non-techniques. À l'issue de la formation, un
+                  titre professionnel de “concepteur développeur d'application”
+                  est délivré.
                 </p>
               </div>
             </div>
@@ -321,15 +414,32 @@
               </div>
               <div class="services_content">
                 <h3>Les contacts</h3>
-                <p>Ma référente : Mariane Milano</p>
-                <a href="tel:07 65 16 47 68">Tel: 07 65 16 47 68</a>
-
-                <a href="https://www.wildcodeschool.com/fr-fr/" target="_blank"
-                  >www.wildcodeschool.com/fr-fr/</a
-                >
-                <a href="mailto:mariane.milano@wildcodeschool.com"
-                  >mariane.milano@wildcodeschool.com</a
-                >
+                <p><u>Ma référente</u> : Mariane Milano</p>
+                <ul>
+                  <li>
+                    <a href="tel:07 65 16 47 68">Tel: 07 65 16 47 68</a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.wildcodeschool.com/fr-fr/"
+                      target="_blank"
+                      >www.wildcodeschool.com/fr-fr/</a
+                    >
+                  </li>
+                  <li>
+                    <a href="mailto:mariane.milano@wildcodeschool.com"
+                      >mariane.milano@wildcodeschool.com</a
+                    >
+                  </li>
+                  <li>
+                    Programme et plus d'informations
+                    <a
+                      href="./img/Programme Dev Alternance Sept2024.pdf"
+                      target="_blank"
+                      >ici</a
+                    >
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -342,9 +452,9 @@
         <div class="section-header">
           <h2 class="section-title">Mes compétences</h2>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore
-            voluptatum numquam earum quas, minus asperiores magni quod officiis
-            veritatis dolorum.
+            Je possède des compétences de bases en développement d'applications,
+            acquises et validées à travers mon projet de soutenance avec un
+            présentation technique.
           </p>
         </div>
         <div class="grid">
@@ -417,11 +527,11 @@
     <section id="portefolio" class="portefolio">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Portefolio</h2>
+          <h2 class="section-title">Portfolio</h2>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore
-            voluptatum numquam earum quas, minus asperiores magni quod officiis
-            veritatis dolorum.
+            C'est une vitrine en ligne de mes projets et réalisations
+            professionnels, destinée à démontrer mes compétences et mon
+            expérience.
           </p>
         </div>
         <ul class="grid portefolio-filters list-unstyled">
@@ -432,10 +542,10 @@
             <a href="#">Développement web</a>
           </li>
           <li class="grid_item">
-            <a href="#">refonte graphique</a>
+            <a href="#">Refonte graphique</a>
           </li>
           <li class="grid_item">
-            <a href="#">application</a>
+            <a href="#">Application</a>
           </li>
         </ul>
         <div class="grid">
@@ -463,8 +573,8 @@
                 class="card_image"
               />
               <div class="card_inner">
-                <h3 class="card_title">Titre du projet</h3>
-                <p class="category">Refonte graphique</p>
+                <h3 class="card_title">Curriculum Vitae</h3>
+                <p class="category">application</p>
               </div>
               <div class="card_overlay">
                 <a href="#">+</a>
@@ -611,5 +721,7 @@
         </div>
       </div>
     </footer>
+    <script src="./js/gobal.js" defer></script>
+    <!-- bonne pratique : script sera mis à la fin permets de charger la page pour éviter les bugs -->
   </body>
 </html>

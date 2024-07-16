@@ -66,6 +66,67 @@ console.log(objet.title, objet.age);
 
 const myFunction = (item) => {
   console.log(item);
-};*/
+};
 
 myFunction("toto");
+myFunction("tata");
+
+const calcul = (nb1, nb2) => {
+  return nb1 + nb2;
+};
+
+let result = calcul(4, 5);
+console.log(result);
+
+// interaction DOM Document Object Model
+// Propriété, evenement, méthode
+
+console.log(document.body);
+
+// selectors
+let header = document.querySelector("header");
+console.log(header);
+
+let grids = document.querySelectorAll(".grid");
+console.log(grids);
+
+grids.forEach((grid) => {
+  grid.classList.add("titi");
+  console.log(grid);
+});
+
+// evenement les plus courants
+
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM entièrement chargé et analysé");
+});
+
+header.addEventListener("mousseenter", (e) => {
+  console.log("souris entre");
+});
+
+// Insertion dom et navigation dans le dom
+
+let header = document.querySelector("header");
+let div = document.createElement("div");
+div.classList.add("top");
+div.innerHTML = "<span>Top zone</span>";
+header.append(div);
+// inséré dans la nav;
+header.parentNode.append(div);
+// inséré dans le footer
+console.log(header.nextElementSibling);
+
+Fin de la théorie*/
+
+// Fonction du thème
+const menuMobil = () => {
+  const btn = document.querySelector("burger");
+  const header = document.querySelector("header");
+
+  btn.addEventListener("click", () => {
+    console.log("click");
+  });
+};
+
+menuMobil();
