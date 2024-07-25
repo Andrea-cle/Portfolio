@@ -169,8 +169,8 @@ section{
   color:blueviolet;
   filter:drop-shadow(2px 2px 20px #360faa);
   /* filter permets un effet néon autour du bouton */
-  transform: translate(-5px, -10px);
-  /* transforme la propriété du hover */
+  /* transform: translate(-5px, -10px); */
+  /* transforme la propriété du hover en faisant un effet rebond au passage du curseur*/
 }
 
 .header .right{
@@ -259,37 +259,72 @@ section{
 
 
 .burger{
-  background:none;
+  /* background:none;
   border: none;
   width: 35px;
   height: 35px;
   cursor: pointer;
   position: relative;
-  margin-left: 1rem;
+  margin-left: 1rem; */
+  display: inline-block;
+  cursor: pointer;
+  padding: 15px;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
 } 
 
 .burger .bar{
-  display: block;
+  /* display: block;
   width: 22px;
   height: 3px;
   background-color: black;
+  position: relative; */
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+  width: 30px;
+  height: 4px;
+  background-color: #000;
+  border-radius: 4px;
+  position: absolute;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .burger .bar::before, .burger .bar::after{
-  display: block;
+  /* display: block;
   content:"";
   width: 22px;
   height: 3px;
   background: #000;
-  position: absolute;    
+  position: absolute;    */
+  content: "";
+  display: block;
+  width: 30px;
+  height: 4px;
+  background-color: #000;
+  border-radius: 4px;
+  position: absolute;
+  /* transition-duration: 0.2s; */
+  /* transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);  */
 }
 
 .burger .bar::before{
-  transform: translateY(-8px);
+  transform: translateY(-10px);
+  /* top: -10px; */
 }
 
 .burger .bar::after{
-  transform: translateY(8px);
+  transform: translateY(10px);
+  /* bottom: -10px; */
 }
 
 @media screen and (max-width: 749px) {
@@ -319,14 +354,37 @@ section{
     display: block;
     font-size: 2rem;
     padding: 2rem;
+    transition: all .4s;
   }
 
-  .show-nav nav{
+  .show-nav ul{
     opacity: 1;
     width: 100%;
     left: 0;
     z-index: 2;
   }
+
+.show-nav nav li a:hover{
+  transform:scale(1.1);
+  text-decoration: none;
+}
+
+  .show-nav .burger .bar{
+    width: 0;
+  }
+
+  .burger .bar::before, 
+  .burger .bar::after{
+    transition: all .2s ease-out;
+  }
+
+  .show-nav .burger .bar::before{
+  transform: rotate(-45deg) translate(-10px, 10px);
+  }
+
+  .show-nav .burger .bar::after{
+    transform: rotate(45deg) translate(-2px, -2px);
+    }
 
 }
 

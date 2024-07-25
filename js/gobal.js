@@ -120,13 +120,31 @@ console.log(header.nextElementSibling);
 Fin de la théorie*/
 
 // Fonction du thème
+
+/* Menu mobil */
+
 const menuMobil = () => {
-  const btn = document.querySelector("burger");
-  const header = document.querySelector("header");
+  const btn = document.querySelector(".burger");
+  const header = document.querySelector(".header");
+  const links = document.querySelectorAll(".navbar a");
 
   btn.addEventListener("click", () => {
-    console.log("click");
+    header.classList.toggle("show-nav");
+  });
+  links.forEach((link) => {
+    link.addEventListener("click", () => {
+      header.classList.remove("show-nav");
+    });
   });
 };
 
 menuMobil();
+
+/* Portfolio */
+
+const tabsFilters = () => {
+  const tabs = document.querySelectorAll(".portefolio-filters a");
+  const projet = document.querySelectorAll(".portefolio .card");
+};
+
+tabsFilters();
