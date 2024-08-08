@@ -143,8 +143,83 @@ menuMobil();
 /* Portfolio */
 
 const tabsFilters = () => {
-  const tabs = document.querySelectorAll(".portefolio-filters a");
-  const projet = document.querySelectorAll(".portefolio .card");
+  const tabs = document.querySelectorAll(".portfolio-filters a");
+  const projects = document.querySelectorAll(".portfolio .card");
+
+  //va permettre de reset le click de la link a 0
+  const resetActivelinks = () => {
+    tabs.forEach((element) => {
+      element.classList.remove("active");
+    });
+  };
+
+  // Fonction de call back
+
+  const showProjects = (element) => {
+    console.log(element);
+    projects.forEach((project) => {
+      let filter = project.getAttribute("data-category");
+      // comparaison si différent entre le filter et la catégorie
+      if (element === "all") {
+        project.parentNode.classList.remove("hide");
+        return;
+        // le return arrête l'action ici si element est bien égal à "all"
+      }
+
+      // if (filter !== element) {
+      //   project.parentNode.classList.add("hide");
+      // } else {
+      //   project.parentNode.classList.remove("hide");
+      // }
+
+      // Option avec opérateurs ternaire :
+      filter !== element
+        ? project.parentNode.classList.add("hide")
+        : project.parentNode.classList.remove("hide");
+
+      // console.log(project);
+    });
+  };
+  // Si lélément ne correspond à la catégorie cliquée l'élément sera hide
+  tabs.forEach((element) => {
+    element.addEventListener("click", (event) => {
+      event.preventDefault();
+      let filter = element.getAttribute("data-filter");
+      // console.log(filter);
+      // La catégorie cliquée est envoyée dans la fonction callback showProjects et l'élement sur lequel il à été cliquée sera récupéré par la const showProjects qui comparera le filter et l'element
+      showProjects(filter);
+      resetActivelinks();
+      element.classList.add("active");
+    });
+  });
 };
 
 tabsFilters();
+
+const showProjectsDetails = () => {
+  const links = document.querySelectorAll(".card_link");
+  const modals = document.querySelectorAll(`.modal`);
+  const btns = document.querySelectorAll("modal_close");
+
+  const hideModals = () => {
+    modals.forEach((modal) => {
+      modal.classList.remove(`show`);
+    });
+  };
+
+  links.forEach((element) => {
+    element.addEventListener("click", (event) => {
+      event.preventDefault();
+      document
+        .querySelector(`[id=${element.dataset.id}]`)
+        .classList.add(`show`);
+    });
+  });
+
+  btns.forEach((btn) => {
+    btn.addEventListener(`click`, (event) => {
+      hideModals();
+    });
+  });
+};
+showProjectsDetails();
