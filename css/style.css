@@ -337,11 +337,11 @@ section{
     top: 55px;
     left:110%;
     width: 100%;
-    overflow: hidden;
-    opacity: 0;    
-    height: calc(100vh-55px);
+    height: calc(100vh - 55px);
        /*calc() : permet de calculer vh hauteur totale de la fenêtre moins la taille du header  */
     background: #f5f5f5;   
+    opacity: 0;    
+    overflow: hidden;
     transition: all .4s ease-out;    
   }
   
@@ -358,14 +358,14 @@ section{
   }
 
   .show-nav ul{
-    opacity: 1;
-    width: 100%;
+    /* width: 100%; */
     left: 0;
+    opacity: 1;
     z-index: 2;
   }
 
 .show-nav nav li a:hover{
-  transform:scale(1.1);
+  transform: scale(1.1);
   text-decoration: none;
 }
 
@@ -394,7 +394,7 @@ section{
   }
 
   .burger{
-    display:none;
+    display: none;
   }
 } 
 
@@ -497,6 +497,8 @@ background: #f5f5f5;
   justify-content: center;
   width: 90px;
   height: 90px;
+  max-width: 90px;  
+  max-height: 90px;
   margin: 0 auto;
   border: 2px solid #5b6c78;
   border-radius: 50%;
@@ -504,6 +506,8 @@ background: #f5f5f5;
 
 .services_icon i{
   font-size: 35px;
+  max-width: 100%;  
+  max-height: 100%;
 }
 
 .services_content{
@@ -517,7 +521,7 @@ background: #f5f5f5;
 
 @media screen and (max-width: 749px) {
   .services{
-    text-align: center;
+    display: flex;
   }
 
   .services_icon{
@@ -532,7 +536,12 @@ background: #f5f5f5;
   }
 
   .services_icon{
-    margin-right: 2rem;
+    /* margin-right: 2rem; */
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    overflow: hidden;
   }
 }
 
@@ -565,10 +574,6 @@ background: #f5f5f5;
   background: #f5f5f5;
 }
 
-.card img{
-  width: 100%;
-}
-
 .portfolio-filters .grid_item{
   max-width: 50%;
   margin-bottom: 0;
@@ -592,14 +597,97 @@ background: #f5f5f5;
   background: #5b6c78;
 }
 
+/* Modal */
+
+.modal{
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* transform: scale(0);
+  overflow: auto; */
+  background-color: rgba(0, 0, 0, 0.4 );
+  transition: all 0.5s ease;
+}
+
+.modal.show{
+  transform: scale(1);
+  /* width: 100%;
+  height: 100%; */
+  top: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal_content{
+  background: #fefefe;
+  max-height: 90vh; /*Limite la hauteur max de la modal */
+  width: 90%;/*ajuste à la taille du petit écran  */
+  max-width: 600px;
+  margin: 2rem auto; /*centre la modal */
+  padding: 2rem;
+  overflow-y: auto; /*permet le défilement si le contenu est trop long*/
+  /* text-align: left; */
+  box-sizing: border-box;
+  position: relative;
+}
+
+.modal img{
+  margin-bottom: 2rem;
+}
+
+.modal_title{
+  margin: 0 0 2rem;
+}
+
+/*close button */
+.modal_close{
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  background: none;
+  border: 1px solid #eee;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  cursor: pointer;
+}
+
+.modal .grid_item{
+  min-width: 100%;
+  margin-bottom: 1rem;
+  opacity: 1;
+  transition: all 1s ease;
+}
 
 @media screen and (max-width: 749px) {
   .portfolio a{
     font-size: 1.4rem;
   }
+
+  .modal_content{
+    width: 95%;
+  }
 }  
 
 @media screen and (min-width: 750px) {
+  .modal .grid_item{
+    min-width: 50%;   
+  }
+
+  .modal_content{
+    padding: 3rem;
+  } 
+  
   .portfolio-filters .grid_item{
     max-width: 25%;
   }
@@ -612,30 +700,44 @@ background: #f5f5f5;
 /* ---------Card---------- */
 
 .card{
+  display: flex;
+  flex-direction: column; /*Permet aux élément d'être empilé verticalement */
+  height: 100%; /*Assure que la card s'étend sur toute la hauteur dispo */
   background: #fff;
   text-transform: uppercase;
   position: relative;
   box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
   border: 1px solid var(--color-body);
+  overflow: hidden; /*Assure que le contenu ne dépasse pas la bordure de la card */
+}
+
+.card img{
+  max-width: 100%; /*Limite à la largeur de la carte */
+  height: auto; /*Maintient le ration d'aspect de l'image */
 }
 
 .card_inner{
-  padding: 2rem;
+  flex: 1; /*Permet à l'élément de prendre tout l'espace dispo */
+  padding: 1rem; /*réduit le padding nécessaire */
 }
 
 .card_title{
-  margin: 0 0 1rem; 
+  margin: 0 0 0.5rem;/*Réduit la marge nécessaire */ 
   font-size: 1.6rem;
 }
 
 .card_overlay{
   background: rgba(0, 0, 0, 0.8);
   position: absolute;
-  z-index: 0;
+  /* z-index: 0; */
   top: 0;
   width: 100%;
   height: 100%;
-  display: none;
+  display: flex; /* Assure que le lien est centré*/
+  align-items: center;
+  justify-content: center;
+  opacity: 0; /*Commence une opacité de 0 pour la transition */
+  transition: opacity 0.3s ease; /*Ajoute une transition pour l'affichage en douceur*/
 }
   
 .card_overlay a{
@@ -649,8 +751,10 @@ background: #f5f5f5;
   /* toute la zone foncée est cliquable */
 }
 
-.card:hover .card_overlay:hover{
-  display:block;
+.card:hover .card_overlay{
+  /* display:block; */
+  top: 0;
+  opacity: 1; /*Affiche l'overlay au survol */
 }
 
  /* ---------Form---------- */
@@ -762,30 +866,3 @@ footer .social li:hover {
 
 /* Component */
 
-.modal{
-  visibility: hidden;
-  opacity: 0;
-  position: fixed;
-  z-index: 4;
-  transform: scale(0);
-  overflow: auto;
-  background: rgba(0, 0, 0, 0.4 );
-  transition: all 0.5s;
-}
-
-.modal.show{
-  transform: scale(1);
-  width: 100%;
-  height: 100%;
-  top: 0;
-  opacity:1;
-  visibility: visible;
-}
-
-.modal_content{
-  background: #fefefe;
-  height: 100vh;
-  padding: 5rem 1rem;
-  overflow: auto;
-  text-align: left;
-}

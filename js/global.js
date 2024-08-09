@@ -1,3 +1,4 @@
+// console.log("le script est chargé");
 /*// Ceci est un commentaire
 // console.log("toto");
 
@@ -124,20 +125,33 @@ Fin de la théorie*/
 /* Menu mobil */
 
 const menuMobil = () => {
+  // console.log("menuMobil function called");
   const btn = document.querySelector(".burger");
+  // console.log(document.querySelector(".burger"));
   const header = document.querySelector(".header");
+  // console.log(document.querySelector(".header"));
   const links = document.querySelectorAll(".navbar a");
 
+  // console.log(btn, header, links);
+
+  //  Click sur le menu burger en version mobile
   btn.addEventListener("click", () => {
     header.classList.toggle("show-nav");
+    if (header.classList.contains("show-nav")) {
+      console.log("Show the nav");
+    } else {
+      console.log("hide the nav (burger click)");
+    }
   });
+
+  // Click sur les liens du menu
   links.forEach((link) => {
     link.addEventListener("click", () => {
       header.classList.remove("show-nav");
+      console.log("hide the nav (link click)");
     });
   });
 };
-
 menuMobil();
 
 /* Portfolio */
@@ -185,7 +199,7 @@ const tabsFilters = () => {
     element.addEventListener("click", (event) => {
       event.preventDefault();
       let filter = element.getAttribute("data-filter");
-      // console.log(filter);
+      console.log(filter);
       // La catégorie cliquée est envoyée dans la fonction callback showProjects et l'élement sur lequel il à été cliquée sera récupéré par la const showProjects qui comparera le filter et l'element
       showProjects(filter);
       resetActivelinks();
@@ -193,33 +207,61 @@ const tabsFilters = () => {
     });
   });
 };
-
 tabsFilters();
 
-const showProjectsDetails = () => {
-  const links = document.querySelectorAll(".card_link");
-  const modals = document.querySelectorAll(`.modal`);
-  const btns = document.querySelectorAll("modal_close");
+/* Modal du portefolio */
 
-  const hideModals = () => {
+document.addEventListener("DOMContentLoaded", () => {
+  const showProjectsDetails = () => {
+    // console.log("showProjectsDetails function call");
+    const links = document.querySelectorAll(".card_link");
+    const modals = document.querySelectorAll(".modal");
+    const btns = document.querySelectorAll(".modal_close");
+
+    // console.log("links", links);
+    // console.log("modals", modals);
+    // console.log("close Buttons", btns);
+
+    const hideModals = () => {
+      console.log("hideModals function call");
+      modals.forEach((modal) => {
+        modal.classList.remove("show");
+        console.log("Modal Hidden");
+      });
+    };
+
+    links.forEach((element) => {
+      element.addEventListener("click", (event) => {
+        event.preventDefault();
+        hideModals(); // Hide all modals before showing the selected one
+        const modalId = element.dataset.id;
+        const modal = document.querySelector(`#${modalId}`);
+        if (modal) {
+          modal.classList.add("show");
+          console.log(`Showing modal: ${modalId}`);
+        } else {
+          console.error(`Modal with id ${modalId} not found.`);
+        }
+      });
+    });
+
+    btns.forEach((btn) => {
+      btn.addEventListener("click", (event) => {
+        hideModals();
+      });
+    });
+
+    // Ferme la modal en cliquant n'importe où sur l'écran
     modals.forEach((modal) => {
-      modal.classList.remove(`show`);
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+          hideModals();
+        }
+      });
     });
   };
 
-  links.forEach((element) => {
-    element.addEventListener("click", (event) => {
-      event.preventDefault();
-      document
-        .querySelector(`[id=${element.dataset.id}]`)
-        .classList.add(`show`);
-    });
-  });
+  showProjectsDetails();
+});
 
-  btns.forEach((btn) => {
-    btn.addEventListener(`click`, (event) => {
-      hideModals();
-    });
-  });
-};
-showProjectsDetails();
+// Effet d'apparition
