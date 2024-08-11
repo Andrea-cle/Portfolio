@@ -86,7 +86,11 @@
             </li>
             <li>
               <a href="https://www.whire.me/@AndreaCLEMENT" target="_blank"
-                ><img class="i" src="img/Whire-Logo.png"
+                ><img
+                  class="i"
+                  src="img/Whire-Logo.png"
+                  loading="lazy"
+                  alt="Logo du site Whire Me"
               /></a>
               <!-- _blank -> ouverture d'une nouvelle fenêtre -->
             </li>
@@ -132,6 +136,7 @@
             <div class="hero_avatar">
               <img
                 src="/img/avatar.png"
+                loading="lazy"
                 alt="Avatar d'Andréa CLEMENT développeuse web full stack"
               />
             </div>
@@ -146,6 +151,7 @@
           <div class="grid_item">
             <img
               src="img/personn.jpg"
+              loading="lazy"
               alt="Photo Andréa CLEMENT Dévelopeuse web full stack"
             />
           </div>
@@ -187,8 +193,8 @@
         <div class="section-header">
           <h2 class="section-title">Informations sur ma future alternance</h2>
           <p>
-            Voici un aperçu des contributions que je pourrai apporter lors de ma
-            future alternance en Développement Web avec la Wild Code School :
+            Plus d'informations concernant ma future alternance en tant que
+            Conceptrice Développeuse d'Applications avec la Wild Code School :
           </p>
         </div>
         <div class="grid">
@@ -215,8 +221,8 @@
                 <h3>Quel diplôme ?</h3>
                 <p>
                   La formation prépare au titre professionnel Concepteur
-                  développeur d'applications délivré par le ministère du
-                  travail, niveau 6 (équivalent bac+3).
+                  Développeur d'Applications délivré par le Ministère du
+                  Travail, niveau 6 (équivalent bac+3).
                 </p>
                 <p>
                   Le titre professionnel comporte trois blocs de compétences :
@@ -529,37 +535,37 @@
           <!-- <div class="grid_item">
             <h3>Compétences en développement</h3>
             <div class="progressbar">
-              <div class="bar" style="width: 75%">HTML</div>
+              <div class="bar" data-width="80">HTML</div>
             </div>
             <div class="progressbar">
-              <div class="bar">CSS</div>
+              <div class="bar" data-width="75">CSS</div>
             </div>
             <div class="progressbar">
-              <div class="bar">JavaScript</div>
+              <div class="bar" data-width="75">JavaScript</div>
             </div>
             <div class="progressbar">
-              <div class="bar">Node</div>
+              <div class="bar" data-width="75">Node</div>
             </div>
             <div class="progressbar">
-              <div class="bar">React</div>
+              <div class="bar" data-width="75">React</div>
             </div>
             <div class="progressbar">
-              <div class="bar">PHTP</div>
+              <div class="bar" data-width="75">PHTP</div>
             </div>
             <h3>Compétences en conception graphique</h3>
             <div class="progressbar">
-              <div class="bar">Photoshop</div>
+              <div class="bar" data-width="75">Photoshop</div>
             </div>
             <div class="progressbar">
-              <div class="bar">Illustrator</div>
+              <div class="bar" data-width="75">Illustrator</div>
             </div>
             <div class="progressbar">
-              <div class="bar">Aftereffect</div>
+              <div class="bar" data-width="75">Aftereffect</div>
             </div>
             <div class="progressbar">
-              <div class="bar" style="width: 10%">Figma</div>
+              <div class="bar" data-width="75">Figma</div>
             </div>
-          </div> -->
+          </div>-->
         </div>
       </div>
     </section>
@@ -592,6 +598,7 @@
             <div class="card" data-category="web">
               <img
                 src="https://picsum.photos/600/400?random=1"
+                loading="lazy"
                 alt="Site applicatif de soutenance Local Link Immo"
                 class="card_image"
               />
@@ -601,12 +608,7 @@
                 <!-- <p class="category">Application</p> -->
               </div>
               <div class="card_overlay">
-                <a
-                  href="https://github.com/Andrea-cle/LocalLinkImmo.git"
-                  class="card_link"
-                  data-id="modal-1"
-                  >+</a
-                >
+                <a class="card_link" data-id="modal-1">+</a>
               </div>
             </div>
             <div class="modal" id="modal-1">
@@ -617,17 +619,19 @@
                     <div class="grid_item">
                       <img
                         src="https://picsum.photos/600/400?random=2"
+                        loading="lazy"
                         alt="Cahier des charges de soutenance"
                         class="card_image"
                       />
                       <img
                         src="https://picsum.photos/600/400?random=2"
+                        loading="lazy"
                         alt="Cahier des charges de soutenance"
                         class="card_image"
                       />
                     </div>
                     <div class="grid_item">
-                      <h4 class="modal_titre h2">Titre de la modal ${id}</h4>
+                      <h4 class="modal_titre h2">Local Link Immo</h4>
                       <p>
                         <i class="fa-regular fa-calendar"></i>
                         <i>Année : 2024</i>
@@ -636,16 +640,18 @@
                         <i class="fa-solid fa-tag">Développement web</i>
                       </p>
                       <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Laboriosam, temporibus!
+                        Site applicatif d'autogestion pour votre parc
+                        immobilier, vous permets de ne pas passer par une agence
+                        immobilière et vous fait donc économiser les frais y
+                        afférant.
                       </p>
                       <h5 class="h3">Informations</h5>
                       <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Velit ratione possimus repellat! Facilis, deleniti
-                        fugiat!
+                        Vous aurez un dashboard dans lequel vous verrez vos
+                        biens qui sont loués ou pas et les noms des locataires,
+                        la date d'entrée dans les lieux.
                       </p>
-                      <h5 class="h3">Technos</h5>
+                      <h5 class="h3">Technos utilisées</h5>
                       <ul>
                         <li>HTML, CSS</li>
                         <li>JavaScript</li>
@@ -654,6 +660,15 @@
                         <li>Express</li>
                         <li>phpMyAdmin</li>
                       </ul>
+                      <p>
+                        <a
+                          href="https://github.com/Andrea-cle/LocalLinkImmo.git"
+                          target="_blank"
+                          class="card_link"
+                          data-id="modal-1"
+                          >Voir le projet sur GitHub</a
+                        >
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -664,6 +679,7 @@
             <div class="card" data-category="web">
               <img
                 src="https://picsum.photos/600/400?random=2"
+                loading="lazy"
                 alt="Cahier des charges de soutenance"
                 class="card_image"
               />
@@ -675,6 +691,7 @@
               <div class="card_overlay">
                 <a
                   href="./img/Cahier des charges Andrea CLEMENT.pdf"
+                  target="_blank"
                   class="card_link"
                   data-id="modal-2"
                   >+</a
@@ -683,17 +700,19 @@
             </div>
             <div class="modal" id="modal-2">
               <button class="modal_close">&times;</button>
-              <div class="modal_content">
+              <!-- <div class="modal_content">
                 <div class="container">
                   <div class="grid">
                     <div class="grid_item">
                       <img
                         src="https://picsum.photos/600/400?random=2"
+                        loading="lazy"
                         alt="Cahier des charges de soutenance"
                         class="card_image"
                       />
                       <img
                         src="https://picsum.photos/600/400?random=2"
+                        loading="lazy"
                         alt="Cahier des charges de soutenance"
                         class="card_image"
                       />
@@ -729,13 +748,14 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
           <div class="grid_item">
             <div class="card" data-category="cv">
               <img
                 src="https://picsum.photos/600/400?random=3"
+                loading="lazy"
                 alt="CV"
                 class="card_image"
               />
@@ -745,7 +765,8 @@
               </div>
               <div class="card_overlay">
                 <a
-                  href="./img/Andréa CLEMENT - Développeuse web Full-Stack .pdf"
+                  href="img/Andréa CLEMENT - Développeuse web Full Stack.pdf"
+                  target="_blank"
                   class="card_link"
                   data-id="modal-3"
                   >+</a
@@ -754,17 +775,19 @@
             </div>
             <div class="modal" id="modal-3">
               <button class="modal_close">&times;</button>
-              <div class="modal_content">
+              <!-- <div class="modal_content">
                 <div class="container">
                   <div class="grid">
                     <div class="grid_item">
                       <img
                         src="https://picsum.photos/600/400?random=2"
+                        loading="lazy"
                         alt="Cahier des charges de soutenance"
                         class="card_image"
                       />
                       <img
                         src="https://picsum.photos/600/400?random=2"
+                        loading="lazy"
                         alt="Cahier des charges de soutenance"
                         class="card_image"
                       />
@@ -800,13 +823,14 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
           <div class="grid_item">
             <div class="card" data-category="cv">
               <img
                 src="https://picsum.photos/600/400?random=4"
+                loading="lazy"
                 alt="lettre de recommandation"
                 class="card_image"
               />
@@ -816,7 +840,8 @@
               </div>
               <div class="card_overlay">
                 <a
-                  href="/img/Cahier des charges Andrea CLEMENT.pdf"
+                  href="img/lettre-recommandation Andréa CLEMENT.pdf"
+                  target="_blank"
                   class="card_link"
                   data-id="modal-4"
                   >+</a
@@ -825,17 +850,19 @@
             </div>
             <div class="modal" id="modal-4">
               <button class="modal_close">&times;</button>
-              <div class="modal_content">
+              <!-- <div class="modal_content">
                 <div class="container">
                   <div class="grid">
                     <div class="grid_item">
                       <img
                         src="https://picsum.photos/600/400?random=2"
+                        loading="lazy"
                         alt="Cahier des charges de soutenance"
                         class="card_image"
                       />
                       <img
                         src="https://picsum.photos/600/400?random=2"
+                        loading="lazy"
                         alt="Cahier des charges de soutenance"
                         class="card_image"
                       />
@@ -871,13 +898,14 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
-          <div class="grid_item">
+          <!-- <div class="grid_item">
             <div class="card">
               <img
                 src="https://picsum.photos/600/400?random=5"
+                loading="lazy"
                 alt="projet de la ville"
                 class="card_image"
               />
@@ -897,11 +925,13 @@
                     <div class="grid_item">
                       <img
                         src="https://picsum.photos/600/400?random=2"
+                        loading="lazy"
                         alt="Cahier des charges de soutenance"
                         class="card_image"
                       />
                       <img
                         src="https://picsum.photos/600/400?random=2"
+                        loading="lazy"
                         alt="Cahier des charges de soutenance"
                         class="card_image"
                       />
@@ -944,6 +974,7 @@
             <div class="card">
               <img
                 src="https://picsum.photos/600/400?random=6"
+                loading="lazy"
                 alt="projet de la ville"
                 class="card_image"
               />
@@ -963,11 +994,13 @@
                     <div class="grid_item">
                       <img
                         src="https://picsum.photos/600/400?random=2"
+                        loading="lazy"
                         alt="Cahier des charges de soutenance"
                         class="card_image"
                       />
                       <img
                         src="https://picsum.photos/600/400?random=2"
+                        loading="lazy"
                         alt="Cahier des charges de soutenance"
                         class="card_image"
                       />
@@ -1004,8 +1037,8 @@
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+            </div> 
+          </div>-->
         </div>
       </div>
     </section>
@@ -1057,7 +1090,10 @@
               </li>
               <li>
                 <a href="https://www.whire.me/@AndreaCLEMENT" target="_blank"
-                  ><img src="img/Whire-Logo.png"
+                  ><img
+                    src="img/Whire-Logo.png"
+                    loading="lazy"
+                    alt="Logo du site Whire Me"
                 /></a>
                 <!-- _blank -> ouverture d'une nouvelle fenêtre -->
               </li>

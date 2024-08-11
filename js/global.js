@@ -125,14 +125,9 @@ Fin de la théorie*/
 /* Menu mobil */
 
 const menuMobil = () => {
-  // console.log("menuMobil function called");
   const btn = document.querySelector(".burger");
-  // console.log(document.querySelector(".burger"));
   const header = document.querySelector(".header");
-  // console.log(document.querySelector(".header"));
   const links = document.querySelectorAll(".navbar a");
-
-  // console.log(btn, header, links);
 
   //  Click sur le menu burger en version mobile
   btn.addEventListener("click", () => {
@@ -148,7 +143,6 @@ const menuMobil = () => {
   links.forEach((link) => {
     link.addEventListener("click", () => {
       header.classList.remove("show-nav");
-      console.log("hide the nav (link click)");
     });
   });
 };
@@ -170,7 +164,6 @@ const tabsFilters = () => {
   // Fonction de call back
 
   const showProjects = (element) => {
-    console.log(element);
     projects.forEach((project) => {
       let filter = project.getAttribute("data-category");
       // comparaison si différent entre le filter et la catégorie
@@ -190,16 +183,14 @@ const tabsFilters = () => {
       filter !== element
         ? project.parentNode.classList.add("hide")
         : project.parentNode.classList.remove("hide");
-
-      // console.log(project);
     });
   };
-  // Si lélément ne correspond à la catégorie cliquée l'élément sera hide
+  // Si l'élément ne correspond à la catégorie cliquée l'élément sera hide
   tabs.forEach((element) => {
     element.addEventListener("click", (event) => {
       event.preventDefault();
       let filter = element.getAttribute("data-filter");
-      console.log(filter);
+
       // La catégorie cliquée est envoyée dans la fonction callback showProjects et l'élement sur lequel il à été cliquée sera récupéré par la const showProjects qui comparera le filter et l'element
       showProjects(filter);
       resetActivelinks();
@@ -213,7 +204,6 @@ tabsFilters();
 
 document.addEventListener("DOMContentLoaded", () => {
   const showProjectsDetails = () => {
-    // console.log("showProjectsDetails function call");
     const links = document.querySelectorAll(".card_link");
     const modals = document.querySelectorAll(".modal");
     const btns = document.querySelectorAll(".modal_close");
@@ -232,8 +222,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     links.forEach((element) => {
       element.addEventListener("click", (event) => {
+        // Vérfie si le lien est externe vers une page web avec l'attribut href
+        const isExternalLink = element.hasAttribute("href");
+
+        if (isExternalLink) {
+          return; // Condition qui permet au lien externe de fonctionner
+        }
+
         event.preventDefault();
-        hideModals(); // Hide all modals before showing the selected one
+        hideModals();
         const modalId = element.dataset.id;
         const modal = document.querySelector(`#${modalId}`);
         if (modal) {
@@ -246,9 +243,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     btns.forEach((btn) => {
-      btn.addEventListener("click", (event) => {
-        hideModals();
-      });
+      btn.addEventListener("click", hideModals);
     });
 
     // Ferme la modal en cliquant n'importe où sur l'écran
@@ -259,9 +254,65 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     });
+
+    // Empêche la propagation du clic à la modal lorsque l'on clique sur le contenu
+    const modalContents = document.querySelectorAll(".modal_content");
+    modalContents.forEach((content) => {
+      content.addEventListener("click", (event) => {
+        event.stopPropagation();
+      });
+    });
   };
 
   showProjectsDetails();
 });
 
 // Effet d'apparition
+
+const observerIntersectionAnimation = () => {
+  const sections = document.querySelectorAll("section");
+  const skills = document.querySelectorAll(".skills .bar");
+
+  sections.forEach((section, index) => {
+    if (index === 0) return;
+    console.log(index);
+    section.style.opacity = "0";
+    section.style.transition = "all 1.6s";
+  });
+
+  // Fait apparaitre la barre de progression à partir de 0
+  skills.forEach((element, index) => {
+    console.log(index);
+    element.style.width = "0";
+    element.style.transition = "all 1.6s";
+  });
+
+  let sectionObserver = new IntersectionObserver(function (entries) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        let element = entry.target;
+        element.style.opacity = "1";
+      }
+    });
+  });
+
+  sections.forEach((section) => {
+    sectionObserver.observe(section);
+  });
+
+  // Barres de progression mis en commentaire dans le HTML
+  let skillsObserver = new IntersectionObserver(function (entries) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        let element = entry.target;
+        let width = element.dataset.width;
+        element.style.width = width + "%";
+      }
+    });
+  });
+  skills.forEach((skill) => {
+    skillsObserver.observe(skill);
+  });
+};
+
+observerIntersectionAnimation();
