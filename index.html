@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -69,7 +70,7 @@
                 >Le blog</a
               >
             </li> -->
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
         <div class="right">
@@ -1052,36 +1053,32 @@
         </div>
         <form
           class="form"
-          action="https://formsubmit.co/andrea.clement.dev@gmail.com"
+          action="https://formsubmit.co/8f1b46404496e47589327cc2ca79016d"
           method="POST"
         >
-          <label for="firstname">
-            <input type="text" name="firstname" id="" placeholder="Nom" />
-          </label>
-          <label for="lastname">
-            <input
-              type="text"
-              name="lastname"
-              id=""
-              placeholder="Prénom"
-              required
-            />
-          </label>
-          <label for="email">
-            <input
-              type="email"
-              name="email"
-              id=""
-              placeholder="Email"
-              required
-            />
-          </label>
+          <input type="hidden" name="_captcha" value="false" />
+          <!--<input type="text" name="_honey" style="display: none" />-->
+          <!-- <input
+            type="hidden"
+            name="_next"
+            value="https://portfolio-drab-delta-68.vercel.app//thanks.html"
+          /> -->
+
+          <label for="firstname">Nom</label>
+          <input type="text" name="firstname" id="firstname" />
+
+          <label for="lastname">Prénom</label>
+          <input type="text" name="lastname" id="lastname" required />
+
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required />
+
           <textarea
             name="message"
             id="message"
             placeholder="Message"
           ></textarea>
-          <input class="btn" type="submit" value="Go" />
+          <input class="btn" type="submit" value="Go !" />
         </form>
       </div>
     </section>
@@ -1137,6 +1134,6 @@
     <script src="/js/global.js" defer></script>
     <!-- bonne pratique : script sera mis à la fin permets de charger la page pour éviter les bugs -->
     <!-- <script src="./js/global.js" defer></script> 
-     defer permets de charger la page pour éviter les bugs-->
+    defer permets de charger la page pour éviter les bugs-->
   </body>
 </html>
